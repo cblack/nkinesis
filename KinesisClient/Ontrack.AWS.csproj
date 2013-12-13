@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{883EC67E-E2C8-4B88-8007-E28BF5D7020A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ontrack.AWS</RootNamespace>
+    <AssemblyName>Ontrack.AWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ServiceStack, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.3.9.71\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.Redis.3.9.71\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.3.9.71\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Kinesis\Model\CreateStreamRequest.cs" />
+    <Compile Include="Kinesis\Model\CreateStreamResponse.cs" />
+    <Compile Include="Kinesis\Model\DeleteStreamRequest.cs" />
+    <Compile Include="Kinesis\Model\DeleteStreamResponse.cs" />
+    <Compile Include="Kinesis\Model\DescribeStreamRequest.cs" />
+    <Compile Include="Kinesis\Model\DescribeStreamResponse.cs" />
+    <Compile Include="Kinesis\Model\GetNextRecordsRequest.cs" />
+    <Compile Include="Kinesis\Model\GetNextRecordsResponse.cs" />
+    <Compile Include="Kinesis\Model\GetShardIteratorRequest.cs" />
+    <Compile Include="Kinesis\Model\GetShardIteratorResponse.cs" />
+    <Compile Include="Kinesis\Model\HashKeyRange.cs" />
+    <Compile Include="Kinesis\Model\ListStreamsRequest.cs" />
+    <Compile Include="Kinesis\Model\ListStreamsResponse.cs" />
+    <Compile Include="Kinesis\Model\MergeShardsRequest.cs" />
+    <Compile Include="Kinesis\Model\MergeShardsResponse.cs" />
+    <Compile Include="Kinesis\Model\PutRecordRequest.cs" />
+    <Compile Include="Kinesis\Model\PutRecordResponse.cs" />
+    <Compile Include="Kinesis\Model\Record.cs" />
+    <Compile Include="Kinesis\Model\Request.cs" />
+    <Compile Include="Kinesis\Model\Response.cs" />
+    <Compile Include="Kinesis\Model\SequenceNumberRange.cs" />
+    <Compile Include="Kinesis\Model\Shard.cs" />
+    <Compile Include="Kinesis\Model\SplitShardRequest.cs" />
+    <Compile Include="Kinesis\Model\SplitShardResponse.cs" />
+    <Compile Include="Kinesis\Model\StreamDescription.cs" />
+    <Compile Include="Kinesis\KinesisClient.cs" />
+    <Compile Include="Kinesis\Exceptions\ExpiredIteratorException.cs" />
+    <Compile Include="Kinesis\Exceptions\IncompleteSignatureException.cs" />
+    <Compile Include="Kinesis\Exceptions\InternalFailureException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidActionException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidArgumentException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidClientTokenIdException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidParameterCombinationException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidParameterValueException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidQueryParameterException.cs" />
+    <Compile Include="Kinesis\Exceptions\InvalidSignatureException.cs" />
+    <Compile Include="Kinesis\Exceptions\LimitExceededException.cs" />
+    <Compile Include="Kinesis\Exceptions\MalformedQueryStringException.cs" />
+    <Compile Include="Kinesis\Exceptions\MissingActionException.cs" />
+    <Compile Include="Kinesis\Exceptions\MissingAuthenticationTokenException.cs" />
+    <Compile Include="Kinesis\Exceptions\MissingParameterException.cs" />
+    <Compile Include="Kinesis\Exceptions\OptInRequiredException.cs" />
+    <Compile Include="Kinesis\Exceptions\ProvisionedThroughputExceededException.cs" />
+    <Compile Include="Kinesis\Exceptions\RequestExpiredException.cs" />
+    <Compile Include="Kinesis\Exceptions\ResourceInUseException.cs" />
+    <Compile Include="Kinesis\Exceptions\ResourceNotFoundException.cs" />
+    <Compile Include="Kinesis\Exceptions\ServiceUnavailableException.cs" />
+    <Compile Include="Kinesis\Exceptions\ThrottlingException.cs" />
+    <Compile Include="Kinesis\Exceptions\ValidationErrorException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
