@@ -3,6 +3,8 @@ nkinesis
 
 Simple .NET client for Amazon Kinesis
 
+NOTE: This was written before AWS released an updated version of their SDK that supports Kinesis.  The current version (as of December 12, 2013) now supports Kinesis.  I would recommend using the AWS SDK for writing Kinesis apps.
+
 
 ### Create/Delete stream:
 
