@@ -81,8 +81,8 @@
     <Compile Include="Kinesis\Model\DeleteStreamResponse.cs" />
     <Compile Include="Kinesis\Model\DescribeStreamRequest.cs" />
     <Compile Include="Kinesis\Model\DescribeStreamResponse.cs" />
-    <Compile Include="Kinesis\Model\GetNextRecordsRequest.cs" />
-    <Compile Include="Kinesis\Model\GetNextRecordsResponse.cs" />
+    <Compile Include="Kinesis\Model\GetRecordsRequest.cs" />
+    <Compile Include="Kinesis\Model\GetRecordsResponse.cs" />
     <Compile Include="Kinesis\Model\GetShardIteratorRequest.cs" />
     <Compile Include="Kinesis\Model\GetShardIteratorResponse.cs" />
     <Compile Include="Kinesis\Model\HashKeyRange.cs" />

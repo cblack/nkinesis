@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ontrack.AWS.Kinesis.Model
 {
-    public class GetNextRecordsRequest : Request
+    public class GetRecordsRequest : Request
     {
         public override bool IsValidRequest()
         {

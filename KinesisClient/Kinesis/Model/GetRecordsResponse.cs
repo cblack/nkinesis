@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ontrack.AWS.Kinesis.Model
 {
-    public class GetNextRecordsResponse : Response
+    public class GetRecordsResponse : Response
     {
         /// <summary>
         /// The next position in the shard from which to start sequentially reading data records. 

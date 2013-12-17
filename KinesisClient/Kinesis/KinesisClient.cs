@@ -147,17 +147,18 @@ namespace Ontrack.AWS.Kinesis
         }
         #endregion
 
-        #region GetNextRecordsResponse GetNextRecords(GetNextRecordsRequest request)
+        #region GetRecordsResponse GetRecords(GetRecordsRequest request)
 
         /// <summary>
         /// This operation returns one or more data records from a shard. 
-        /// More info: http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetNextRecords.html
+        /// More info: http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GetNextRecordsResponse GetNextRecords(GetNextRecordsRequest request)
+        public GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
-            return Invoke<GetNextRecordsResponse>(request, "GetNextRecords");
+            //kinesisUrl = "http://kinesis.us-east-1.amazonaws.com";
+            return Invoke<GetRecordsResponse>(request, "GetRecords");
         }
         #endregion
 
@@ -365,7 +366,7 @@ namespace Ontrack.AWS.Kinesis
         #region Private vars
 
         private string kinesisUrl = "https://kinesis.us-east-1.amazonaws.com";
-        private string apiVersion = "20131104";
+        private string apiVersion = "20131202";
         private const string ISO8601BasicDateTimeFormat = "yyyyMMddTHHmmssZ";
         private string accessKey;
         private string secretKey;
