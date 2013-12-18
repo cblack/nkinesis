@@ -46,26 +46,44 @@ foreach (var currentStreamName in listStreamResponse.StreamNames)
     {
         var getShardIteratorRequest = new GetShardIteratorRequest()
         {
-            StreamName = streamName,
+            StreamName = currentStream,
             ShardId = shard.ShardId,
             ShardIteratorType = ShardIteratorTypes.TRIM_HORIZON
         };
         var getShardIteratorResponse = kinesis.GetShardIterator(getShardIteratorRequest);
 
-        var getNextRecordsRequest = new GetNextRecordsRequest() 
-        { 
-            ShardIterator = getShardIteratorResponse.ShardIterator, 
-            Limit = 10 
-        };
-        var getNextRecordsResponse = kinesis.GetNextRecords(getNextRecordsRequest);
-        
-        foreach (var record in getNextRecordsResponse.Records)
+        var thisShardIterator = getShardIteratorResponse.ShardIterator;
+        while (thisShardIterator != null)
         {
-            var data = Encoding.UTF8.GetString(Convert.FromBase64String(record.Data));
-            Console.WriteLine(data);
+            var getRecordsRequest = new GetRecordsRequest()
+            {
+                ShardIterator = thisShardIterator,
+                Limit = 10
+            };
+            var getRecordsResponse = kinesis.GetRecords(getRecordsRequest);
+
+            foreach (var record in getRecordsResponse.Records)
+            {
+                var data = Encoding.UTF8.GetString(Convert.FromBase64String(record.Data));
+                Console.WriteLine(data);
+            }
+            thisShardIterator = getRecordsResponse.NextShardIterator;
         }
     }
 }
 
+```
+
+### Write record:
+
+```csharp
+var request = new PutRecordRequest()
+{
+    StreamName = streamName,
+    PartitionKey = partitionKey,
+    Data = Convert.ToBase64String(Encoding.UTF8.GetBytes(data))
+};
+var response = kinesis.PutRecord(request);
+Console.WriteLine("Put record {0}", response.SequenceNumber);
 ```
 
